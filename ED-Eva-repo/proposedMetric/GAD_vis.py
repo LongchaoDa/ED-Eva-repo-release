@@ -17,7 +17,7 @@ def load_pickle_auto_device(path):
                 return lambda b: torch.load(
                     io.BytesIO(b),
                     map_location=device,
-                    weights_only=False
+                    # weights_only=False
                 )
             return super().find_class(module, name)
 
