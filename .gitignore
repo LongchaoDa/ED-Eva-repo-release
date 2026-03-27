@@ -1,0 +1,7 @@
+*.pyc
+*.coverage
+coverage.xml
+.venv/
+build/
+.pytest_cache
+src/my_package.egg-info/
