@@ -150,7 +150,9 @@ for cfg in configs:
     fig.colorbar(cf, ax=ax, label="Density")
 
     plt.tight_layout()
-    Path(cfg["save"]).parent.mkdir(parents=True, exist_ok=True)
-    fig.savefig(cfg["save"], dpi=300)
+    save_path = Path(cfg["save"]).resolve()
+    save_path.parent.mkdir(parents=True, exist_ok=True)
+    fig.savefig(save_path, dpi=300)
     plt.show()
     plt.close(fig)
+    print(f"Please check {save_path} to view the generated image.")
