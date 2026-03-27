@@ -1,0 +1,21 @@
+[project]
+name = "my_package"
+version = "1.0"
+dependencies = ["numpy", "importlib_resources"]  # Required dependencies
+
+[project.optional-dependencies]
+test = ["pytest", "pytest-cov"]
+docs = ["sphinx>=4.0"]
+dev = ["isort", "pylint", "black"]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+
+[project.scripts]
+run_calculator = "scripts.run_calculator:main"
+run_calculator_data = "scripts.run_calculator_data:main"
+ 
+[tool.setuptools.package-data]
+my_package = ["datafiles/*"]
